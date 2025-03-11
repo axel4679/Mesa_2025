@@ -38,7 +38,7 @@
 								<strong>Dueño (DNI):</strong> <span th:text="${automovil.dni}"></span>
 							</p>
 							<p class="card-text">
-								<strong>Estado:</strong> <span th:text="${automovil.estado}"></span>
+								<strong>Estado:</strong> <span th:text="${automovil.estado} ? 'Disponible' : 'No disponible'"></span>
 							</p>
 						</div>
 					</div>
@@ -56,4 +56,9 @@
 			contacto@municipalidad.com | Web: www.municipalidad.com</p>
 	</footer>
 </body>
+<style>  
+        body {  
+            background-color: #e6e1c7; /* Beige */  
+        }  
+    </style>  
 </html>

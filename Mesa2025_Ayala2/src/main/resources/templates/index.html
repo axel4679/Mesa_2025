@@ -1,96 +1,84 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estacionamiento Municipal</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-</head>
-<body class="bg-light">
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Estacionamiento Municipal</title>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">  
+    
+</head>  
+<body>  
 
-	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container">
-			<a class="navbar-brand" th:href="@{/}">Estacionamiento Municipal</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item"><a class="nav-link" th:href="@{/}">Inicio</a></li>
-					<li class="nav-item"><a class="nav-link"
-						th:href="@{/automovil/nuevo}">Registrar Auto</a></li>
-					<li class="nav-item"><a class="nav-link"
-						th:href="@{/estacionamiento/nuevo}">Registar
-							BoxDeEstacionamiento</a></li>
-					<li class="nav-item"><a class="nav-link"
-						th:href="@{/reserva/nuevo}">Reservar Estacionamiento</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- Navbar -->
-	<!-- Contenido principal -->
-	<div class="container text-center mt-4">
-		<h2 class="mb-4">Estacionamiento Municipal</h2>
+    <!-- Navbar -->  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
+        <div class="container">  
+            <a class="navbar-brand" th:href="@{/}">Estacionamiento Municipal</a>  
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">  
+                <span class="navbar-toggler-icon"></span>  
+            </button>  
+            <div class="collapse navbar-collapse" id="navbarNav">  
+                <ul class="navbar-nav ms-auto">  
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Inicio</a></li>  
+                    <li class="nav-item"><a class="nav-link" th:href="@{/automovil/nuevo}">Registrar Auto</a></li>  
+                    <li class="nav-item"><a class="nav-link" th:href="@{/estacionamiento/nuevo}">Registrar BoxDeEstacionamiento</a></li>  
+                    <li class="nav-item"><a class="nav-link" th:href="@{/reserva/nuevo}">Reservar Estacionamiento</a></li>  
+                </ul>  
+            </div>  
+        </div>  
+    </nav>  
+    <!-- Navbar -->  
 
-		<!-- Información de espacios disponibles -->
-		<div class="row justify-content-center">
-			<div class="col-md-6">
-				<div class="card bg-secondary text-white">
-					<div class="card-body">
-						<h4 class="card-title">Espacios Disponibles</h4>
+    <!-- Contenido principal -->  
+    <div class="container text-center mt-4">  
+        <h2 class="mb-4">Estacionamiento Municipal</h2>  
 
-					</div>
-				</div>
-			</div>
-		</div>
+        <!-- Información de espacios disponibles -->  
+        <div class="row justify-content-center">  
+            <div class="col-md-6">  
+                <div class="card bg-secondary text-white">  
+                    <div class="card-body">  
+                        <h4 class="card-title">Espacios Disponibles</h4>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
 
-		<!-- Sección de acciones -->
-		<div class="row mt-4">
-			<div class="row justify-content-center">
-				<div class="col-md-4">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Zona 1</h5>
-							<p class="card-text">Costo por hora: $300</p>
-				<!-- 			<p class="card-text">
-								Espacios libres: <span th:text="${espaciosDisponibles.zona1}">Cargando...</span>
-							</p>
- -->
-  <span th:text="${espaciosDisponibles}">Cargando...</span>
-								
-							<a th:href="@{/reserva/nuevo}" class="btn btn-primary">Reservar</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Zona 2</h5>
-							<p class="card-text">Costo por hora: $500</p>
-							<!-- 		<p class="card-text">
-								Espacios libres: <span th:text="${espaciosDisponibles.zona2}">Cargando...</span>
-							</p> -->
+        <!-- Sección de acciones -->  
+        <div class="row mt-4">  
+            <div class="row justify-content-center">  
+                <div class="col-md-4">  
+                    <div class="card">  
+                        <div class="card-body">  
+                            <h5 class="card-title">Zona 1</h5>  
+                            <p class="card-text">Costo por hora: $300</p>  
+                            <span th:text="${espaciosDisponibles}">Cargando...</span>  
+                            <a th:href="@{/reserva/nuevo}" class="btn btn-primary">Reservar</a>  
+                        </div>  
+                    </div>  
+                </div>  
+                <div class="col-md-4">  
+                    <div class="card">  
+                        <div class="card-body">  
+                            <h5 class="card-title">Zona 2</h5>  
+                            <p class="card-text">Costo por hora: $500</p>  
+                            <a th:href="@{/reserva/nuevo}" class="btn btn-danger">Reservar</a>  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
 
-							<a th:href="@{/reserva/nuevo}" class="btn btn-danger">Reservar</a>
-						</div>
-					</div>
-				</div>
-			</div>
+    <!-- Footer -->  
+    <footer class="bg-dark text-white text-center py-3 mt-5">  
+        <p>Contacto Municipalidad: Teléfono: (123) 456-7890 | Email: contacto@municipalidad.com | Web: www.municipalidad.com</p>  
+    </footer>  
 
-		</div>
-</body>
-<!-- footer -->
-<footer class="bg-dark text-white text-center py-3 mt-5">
-	<p>Contacto Municipalidad: Teléfono: (123) 456-7890 | Email:
-		contacto@municipalidad.com | Web: www.municipalidad.com</p>
-</footer>
-
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- footer -->
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
+</body>  
+<style>  
+        body {  
+            background-color: #e6e1c7; /* Beige */  
+        }  
+    </style>  
+</html>  

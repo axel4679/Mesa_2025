@@ -23,14 +23,14 @@
 					<div class="card shadow-sm">
 						<div class="card-body">
 							<h5 class="card-title">
-								Estacionamiento #<span th:text="${estacionamiento.codigo}"></span>
+								Estacionamiento <span th:text="${estacionamiento.codigo}"></span>
 							</h5>
 							<p class="card-text">
 								<strong>Zona:</strong> <span th:text="${estacionamiento.zona}"></span>
 							</p>
 							<p class="card-text">
 								<strong>Disponibilidad:</strong> <span
-									th:text="${estacionamiento.disponibilidad}"></span>
+									th:text="${estacionamiento.disponibilidad} ? 'Disponible' : 'No disponible'"></span>
 							</p>
 						</div>
 					</div>
@@ -48,4 +48,9 @@
 	<p>Contacto Municipalidad: Teléfono: (123) 456-7890 | Email:
 		contacto@municipalidad.com | Web: www.municipalidad.com</p>
 </footer>
+<style>  
+        body {  
+            background-color: #e6e1c7; /* Beige */  
+        }  
+    </style>  
 </html>
