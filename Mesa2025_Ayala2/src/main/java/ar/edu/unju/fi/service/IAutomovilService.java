@@ -14,5 +14,8 @@ public interface IAutomovilService {
 
 	public List<Automovil> listar();
 
+
+	void actualizarEstado(String patente, Boolean disponibilidad);
+
 	// public void eliminar(String dni);
 }

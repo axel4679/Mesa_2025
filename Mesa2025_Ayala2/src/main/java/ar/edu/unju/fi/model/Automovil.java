@@ -22,13 +22,11 @@ public Marca marca;
 
 @Enumerated(EnumType.STRING)
 public Color color;
-
-
 private String modelo;
 private Long dni;
 private Boolean estado;
 enum Color {
-  NEGRO, BLANCO, VERDE, ROJO, GRIS, AMARRILLO, 
+  NEGRO, BLANCO, VERDE, ROJO, GRIS, AMARILLO, 
 }
 
 enum Marca {
