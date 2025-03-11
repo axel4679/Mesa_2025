@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Reservas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Incluir el Navbar desde layout.html -->
+    <div th:replace="~{layouts/layout :: navbar}"></div>
+
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Lista de Reservas de Estacionamiento</h2>
+
+        <div class="row">
+            <th:block th:each="reserva : ${reservas}">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Reserva #<span th:text="${reserva.codigo}"></span></h5>
+                            <p class="card-text"><strong>Auto:</strong> <span th:text="${reserva.automovil.modelo}"></span></p>
+                            <p class="card-text"><strong>Zona:</strong> <span th:text="${reserva.zona}"></span></p>
+                            <p class="card-text"><strong>Horas:</strong> <span th:text="${reserva.horas}"></span></p>
+                            <p class="card-text"><strong>Total:</strong> <span th:text="${reserva.costo}"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+
+</body>
+<footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>Contacto Municipalidad: Teléfono: (123) 456-7890 | Email: contacto@municipalidad.com | Web: www.municipalidad.com</p>
+    </footer>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</html>
