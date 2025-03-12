@@ -78,14 +78,34 @@
 						</select>
 					</div>
 
-					<div class="mb-3">
-						<label class="form-label">Seleccionar Automóvil</label>
-						<select class="form-select" th:field="*{automovil}" required>
-							<option th:each="automovil : ${automoviles}"
-								th:if="${automovil.estado}" th:value="${automovil.patente}"
-								th:text="${automovil.marca + ' - ' + automovil.modelo + ' - ' + automovil.patente}"></option>
-						</select>
-					</div>
+
+
+
+			<!-- Automóviles Listados con Cards y Radio Buttons -->
+<div class="mb-3">
+    <label class="form-label">Seleccionar Automóvil</label>
+    <div class="row">
+        <!-- Itera sobre los automóviles y genera una card por cada uno -->
+        <div th:each="automovil : ${automoviles}" class="col-md-4">
+            <div class="card card-custom text-center">
+                <div class="card-header card-header-custom">
+                    <h6 class="mb-0" th:text="${automovil.marca} + ' - ' + ${automovil.modelo}"></h6>
+                </div>
+                <div class="card-body">
+                    <input type="radio" th:field="*{automovil}" th:value="${automovil.patente}" 
+                           id="automovil_${automovil.patente}" name="automovil" required>
+                    <label class="form-label d-block" for="automovil_${automovil.patente}">
+                        <strong>Patente:</strong> <span th:text="${automovil.patente}"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 					<div class="mb-3">
 						<label class="form-label">Seleccionar Box</label>
@@ -154,5 +174,28 @@ body {
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
 }
+.card {
+	cursor: pointer;
+}
+.card-body {
+	border-radius: 10px;
+}
+.card-custom {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card-custom:hover {
+    transform: scale(1.03);
+}
+
+.card-header-custom {
+    background-color: #343a40;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
 </style>
 </html>
